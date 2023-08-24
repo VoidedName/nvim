@@ -4,7 +4,6 @@ function _M.setup(on_attach)
     local pid = vim.fn.getpid()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     -- local capabilities = require("plugins.configs.lspconfig").capabilities
-    local omnisharp_bin = "\"C:\\Users\\KoganDaniel(Group)\\AppData\\Local\\nvim-data\\mason\\packages\\omnisharp\\libexec\\OmniSharp.dll\""
     local lspconfig = require("lspconfig")
     lspconfig.omnisharp.setup {
         on_attach = on_attach,
