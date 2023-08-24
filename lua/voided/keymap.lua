@@ -4,19 +4,19 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- go back to file exploration
-map("n", "<leader>ll", vim.cmd.Explore)
-map("n", "<leader>ls", ":NvimTreeToggle<CR>")
+--map("n", "<leader>ll", ":NvimTreeOpen({ current_window = true, find_file = true  })")
+-- map("n", "<leader>ls", ":NvimTreeToggle<CR>")
 
 -- move code
 map('n', '<A-j>', ':m .+1<CR>==')
 map('n', '<A-k>', ':m .-2<CR>==')
-map('n', '<A-h>',  '<<')
-map('n', '<A-l>',  '>>')
+map('n', '<A-h>', '<<')
+map('n', '<A-l>', '>>')
 
 map('i', '<A-j>', '<Esc>:m .+1<CR>==gi')
 map('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
-map('i', '<A-h>',  '<C-d>')
-map('i', '<A-l>',  '<C-t>')
+map('i', '<A-h>', '<C-d>')
+map('i', '<A-l>', '<C-t>')
 
 map('v', '<A-j>', ':m \'>+1<CR>gv=gv')
 map('v', '<A-k>', ':m \'<-2<CR>gv=gv')
@@ -36,14 +36,14 @@ map('n', '<A-S-j>', 'i<CR><ESC>')
 
 -- delete without yank
 
-map('x', 'p', 'pgvy') -- yanks back what has been pasted
-map('n', '<leader>C', '"_C') -- change to end of line without yanking
-map('n', '<leader>S', '"_S') -- substitude to end of line without yanking
-map('n', '<leader>x', '"_x') -- delete character without yanking
+map('x', 'p', 'pgvy')          -- yanks back what has been pasted
+map('n', '<leader>C', '"_C')   -- change to end of line without yanking
+map('n', '<leader>S', '"_S')   -- substitude to end of line without yanking
+map('n', '<leader>x', '"_x')   -- delete character without yanking
 map('n', '<leader>dd', '"_dd') -- delete line without yanking
-map('n', '<leader>d', '"_d') -- delete without yanking     (you have that one)
-map('n', '<leader>D', '"_D') -- delete to end of line without yanking
-map('v', '<leader>d', '"_d') -- delete selection without yanking  
+map('n', '<leader>d', '"_d')   -- delete without yanking     (you have that one)
+map('n', '<leader>D', '"_D')   -- delete to end of line without yanking
+map('v', '<leader>d', '"_d')   -- delete selection without yanking
 
 -- Resize with arrows
 -- delta: 2 lines
@@ -54,7 +54,7 @@ map('n', '<C-Right>', ':vertical resize +2<CR>')
 
 -- move to window
 vim.cmd(
-  [[
+    [[
   function! WinMove(key)
     let t:curwin = winnr()
     exec "wincmd ".a:key
@@ -74,4 +74,3 @@ map('n', '<leader>h', ":call WinMove('h')<CR>")
 map('n', '<leader>j', ":call WinMove('j')<CR>")
 map('n', '<leader>k', ":call WinMove('k')<CR>")
 map('n', '<leader>l', ":call WinMove('l')<CR>")
-
