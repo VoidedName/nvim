@@ -23,7 +23,7 @@ function _M.setup(on_attach)
         enable_ms_build_load_projects_on_demand = false,
 
         -- Enables support for roslyn analyzers, code fixes and rulesets.
-        enable_roslyn_analyzers = false,
+        enable_roslyn_analyzers = true,
 
         -- Specifies whether 'using' directives should be grouped and sorted during
         -- document formatting.
@@ -35,11 +35,11 @@ function _M.setup(on_attach)
         -- have a negative impact on initial completion responsiveness,
         -- particularly for the first few completion sessions after opening a
         -- solution.
-        enable_import_completion = false,
+        enable_import_completion = true,
 
         -- Specifies whether to include preview versions of the .NET SDK when
         -- determining which version to use for project loading.
-        sdk_include_prereleases = true,
+        sdk_include_prereleases = false,
 
         -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
         -- true
