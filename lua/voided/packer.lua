@@ -91,6 +91,21 @@ return packer.startup(function(use)
     -- terminal
     use 'voldikss/vim-floaterm'
 
+
+    -- status bar
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    -- File explorer tree
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

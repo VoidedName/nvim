@@ -93,7 +93,7 @@ cmp.setup({
         -- kind: single letter indicating the type of completion
         -- abbr: abbreviation of "word"; when not empty it is used in the menu instead of "word"
         -- menu: extra text for the popup menu, displayed after "word" or "abbr"
-        fields = { 'kind', 'abbr', 'menu' },
+        fields = { 'menu', 'abbr', 'kind' },
 
         -- customize the appearance of the completion menu
         format = function(entry, vim_item)
@@ -102,10 +102,10 @@ cmp.setup({
             vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
 
             vim_item.menu = ({
-                nvim_lsp = '[Lsp]',
-                luasnip = '[Luasnip]',
-                buffer = '[File]',
-                path = '[Path]',
+              nvim_lsp = 'λ',
+              vsnip = '⋗',
+              buffer = 'b',
+              path = 'p'
             })[entry.source.name]
             return vim_item
         end,
