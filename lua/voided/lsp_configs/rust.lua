@@ -44,7 +44,7 @@ function _M.setup(on_attach)
             on_attach = function (client, buffnr)
                 on_attach(client, buffnr)
                 vim.keymap.set("n", "<C-c>", rt.hover_actions.hover_actions, { buffer = buffnr })
-                vim.keymap.set("n", "<leader>ca", rt.code_action_group.code_action_group, { buffer = buffnr })
+                vim.keymap.set("n", "<leader>ga", rt.code_action_group.code_action_group, { buffer = buffnr })
             end,
             settings = {
                 -- to enable rust-analyzer settings visit:
