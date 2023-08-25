@@ -74,3 +74,5 @@ map('n', '<leader>h', ":call WinMove('h')<CR>")
 map('n', '<leader>j', ":call WinMove('j')<CR>")
 map('n', '<leader>k', ":call WinMove('k')<CR>")
 map('n', '<leader>l', ":call WinMove('l')<CR>")
+
+
