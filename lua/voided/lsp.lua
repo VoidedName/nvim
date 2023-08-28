@@ -29,7 +29,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -65,7 +65,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 -- global config for diagnostic
 vim.diagnostic.config {
   underline = false,
-  virtual_text = true,
+  virtual_text = false,
   signs = true,
   severity_sort = true,
   update_in_insert = true,

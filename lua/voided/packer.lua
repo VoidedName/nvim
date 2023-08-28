@@ -101,6 +101,7 @@ return packer.startup(function(use)
     -- File explorer tree
     use {
         'nvim-tree/nvim-tree.lua',
+        "folke/trouble.nvim",
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
