@@ -60,7 +60,6 @@ function _M.setup(on_attach)
     -- TODO(voided): make this work
     local is_ok, config = pcall(dofile, vim.fn.getcwd() .. "\\.nvim\\config.lua")
     if is_ok then 
-        print("found project config")
         dap.adapters.coreclr = {
             type = 'executable',
             command = netcoredbg,
@@ -78,8 +77,6 @@ function _M.setup(on_attach)
             },
         }
     else
-        print("failed to find project files")
-        print(vim.fn.getcwd() .. "\\.nvim\\dap")
     end
     print(is_ok)
 end
