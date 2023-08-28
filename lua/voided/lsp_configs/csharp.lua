@@ -1,5 +1,16 @@
 local _M = {}
 
+local this_os = vim.loop.os_uname().sysname
+local mason_extensions = vim.fn.stdpath("data")
+local netcoredbg
+
+if this_os:find "Windows" then
+    netcoredbg = mason_extensions .. "\\mason\\packages\\netcoredbg\\netcoredbg\\netcoredbg"
+else
+    netcoredbg = mason_extensions .. "/mason/packages/netcoredbg/netcoredbg/netcoredbg"
+end
+
+
 function _M.setup(on_attach)
     local pid = vim.fn.getpid()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -44,6 +55,33 @@ function _M.setup(on_attach)
         -- true
         analyze_open_documents_only = false,
     }
+    
+    local dap = require('dap')
+    -- TODO(voided): make this work
+    local is_ok, config = pcall(dofile, vim.fn.getcwd() .. "\\.nvim\\config.lua")
+    if is_ok then 
+        print("found project config")
+        dap.adapters.coreclr = {
+            type = 'executable',
+            command = netcoredbg,
+            args = {'--interpreter=vscode'}
+        }
+
+        dap.configurations.cs = {
+            {
+                type = "coreclr",
+                name = "launch - netcoredbg",
+                request = "launch",
+                program = function()
+                    return vim.fn.input('Path to dll', vim.fn.getcwd() .. config.debug_path, 'file')
+                end,
+            },
+        }
+    else
+        print("failed to find project files")
+        print(vim.fn.getcwd() .. "\\.nvim\\dap")
+    end
+    print(is_ok)
 end
 
 return _M
