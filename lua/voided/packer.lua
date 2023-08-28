@@ -109,8 +109,4 @@ return packer.startup(function(use)
     -- debugger
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
-
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
 end)

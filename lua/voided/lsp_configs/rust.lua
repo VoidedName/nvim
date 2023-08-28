@@ -22,7 +22,6 @@ function _M.setup(on_attach)
     -- rust-tools will configure and enable certain LSP features for us.
     -- See https://github.com/simrat39/rust-tools.nvim#configuration
     local opts = {
-        capabilities = vim.lsp.protocol.make_client_capabilities(),
         tools = {
             hover_actions = {
                 auto_focus = true,
