@@ -70,7 +70,7 @@ vim.cmd(
   ]]
 )
 
-map('n', '<leader>h', ":call WinMove('h')<CR>")
-map('n', '<leader>j', ":call WinMove('j')<CR>")
-map('n', '<leader>k', ":call WinMove('k')<CR>")
-map('n', '<leader>l', ":call WinMove('l')<CR>")
+map('n', '<leader><Left>', ":call WinMove('h')<CR>")
+map('n', '<leader><Down>', ":call WinMove('j')<CR>")
+map('n', '<leader><Up>', ":call WinMove('k')<CR>")
+map('n', '<leader><Right>', ":call WinMove('l')<CR>")
