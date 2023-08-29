@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<F7>",  ":FloatermNew<CR>", { silent = true })
-vim.keymap.set("n", "<F7>",  "<C-\\><C-n>:FloatermNew<CR>", { silent = true })
+vim.keymap.set("t", "<F7>",  "<C-\\><C-n>:FloatermNew<CR>", { silent = true })
 vim.keymap.set("n", "<F8>",  ":FloatermPrev<CR>", { silent = true })
 vim.keymap.set("t", "<F8>",  "<C-\\><C-n>:FloatermPrev<CR>", { silent = true })
 vim.keymap.set("n", "<F9>",  ":FloatermNext<CR>", { silent = true })

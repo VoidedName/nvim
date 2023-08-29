@@ -78,7 +78,6 @@ function _M.setup(on_attach)
         }
     else
     end
-    print(is_ok)
 end
 
 return _M
