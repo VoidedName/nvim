@@ -93,16 +93,10 @@ return packer.startup(function(use)
 
 
     -- status bar
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    use 'nvim-lualine/lualine.nvim'
 
     -- File explorer tree
-    use {
-        'nvim-tree/nvim-tree.lua',
-        "folke/trouble.nvim",
-    }
+    use "folke/trouble.nvim"
 
     use 'nvim-tree/nvim-web-devicons'
 

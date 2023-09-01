@@ -1,11 +1,11 @@
 vim.g.maplocalleader = " "
 vim.g.mapleader = " "
-
+vim.g.netrw_liststyle = 3
 local map = vim.keymap.set
 
 -- go back to file exploration
---map("n", "<leader>ll", ":NvimTreeOpen({ current_window = true, find_file = true  })")
--- map("n", "<leader>ls", ":NvimTreeToggle<CR>")
+map("n", "<leader>ll", ":Explore<CR>")
+map("n", "<leader>ls", ":Lexplore 20<CR>")
 
 -- move code
 map('n', '<A-j>', ':m .+1<CR>==')
