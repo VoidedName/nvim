@@ -1,7 +1,6 @@
 local _M = {}
 
 function _M.setup(on_attach)
-
     local lspconfig = require("lspconfig")
     lspconfig.lua_ls.setup {
         on_attach = on_attach,
