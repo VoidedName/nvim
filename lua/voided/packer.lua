@@ -44,7 +44,9 @@ return packer.startup(function(use)
 
     -- themes
     use { "ellisonleao/gruvbox.nvim" }
-
+    require('packer').startup(function(use_)
+        use_({ 'kepano/flexoki-neovim', as = 'flexoki' })
+    end)
     -- lsp
     -- Visualize lsp progress
     use({
