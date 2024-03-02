@@ -52,12 +52,16 @@ function _M.setup(on_attach)
                     -- enable clippy on save
                     checkOnSave = {
                         command = "clippy",
+                    },
+                    cargo = {
+                        -- target = "wasm32-unknown-unknown"
                     }
                 },
             },
         },
         dap = { adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path) },
     }
+
 
     rt.setup(opts)
 end

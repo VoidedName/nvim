@@ -6,6 +6,7 @@ function _M.setup(on_attach)
     require("voided.lsp_configs.csharp").setup(on_attach)
     require("voided.lsp_configs.ts").setup(on_attach)
     require("voided.lsp_configs.css").setup(on_attach)
+    require("voided.lsp_configs.wgsl").setup(on_attach)
 end
 
 return _M
