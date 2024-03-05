@@ -51,7 +51,8 @@ cmp.setup({
         ['<C-j>'] = cmp.mapping.select_next_item(),
         -- Use <CR>(Enter) to confirm selection
         -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ['<CR>'] = cmp.config.diable,
 
         -- start auto completion
         ['<C-c>'] = cmp.mapping.complete(),
@@ -83,7 +84,6 @@ cmp.setup({
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
-
     },
 
     -- Let's configure the item's appearance
