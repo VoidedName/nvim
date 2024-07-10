@@ -100,6 +100,8 @@ return packer.startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
 
     -- debugger
-    use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
+    use { 'rcarriga/nvim-dap-ui', requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
+
+    -- markdown
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
